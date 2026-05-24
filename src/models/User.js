@@ -2,7 +2,6 @@
 
 // models/User.js
 const mongoose = require("mongoose");
-const config = require("config");
 
 const userSchema = new mongoose.Schema({
   fullname: { type: String, required: true },

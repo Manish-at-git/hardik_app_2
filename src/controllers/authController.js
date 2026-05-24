@@ -3,7 +3,6 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { StatusMessage } = require("../utils/statusMessage");
-const config = require("config");
 const { StatusCodes, ReasonPhrases } = require("http-status-codes");
 
 const signup = async (req, res) => {

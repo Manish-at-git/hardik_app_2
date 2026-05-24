@@ -6,6 +6,10 @@ const db = require("./src/config/db");
 const configureMiddleware = require("./src/config/middleware");
 const authRoutes = require("./src/routes/authRoutes");
 const userRoutes = require("./src/routes/userRoutes");
+
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./src/output/swagger-output.json");
+
 const app = express();
 
 configureMiddleware(app);
@@ -25,6 +29,13 @@ app.get("/", (req, res) => {
 //   console.log(`Server is running on port ${PORT}`);
 //   await db.connectToDatabase();
 // });
+
+
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocument)
+);
 
 db.connectToDatabase();
 

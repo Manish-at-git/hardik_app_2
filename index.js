@@ -1,4 +1,4 @@
-/** @format */
-const swaggerGen = require("./src/config/swaggerGen");
 
-swaggerGen();
+const app = require("./app");
+
+module.exports = app;
