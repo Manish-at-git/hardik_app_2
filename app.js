@@ -37,9 +37,10 @@ app.get("/swagger-test", (req, res) => {
 // });
 
 
-app.use(
+app.use("/api-docs", swaggerUi.serve);
+
+app.get(
   "/api-docs",
-  swaggerUi.serve,
   swaggerUi.setup(swaggerDocument)
 );
 
