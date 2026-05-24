@@ -37,11 +37,12 @@ app.get("/swagger-test", (req, res) => {
 // });
 
 
-app.use("/api-docs", swaggerUi.serve);
-
-app.get(
+app.use(
   "/api-docs",
-  swaggerUi.setup(swaggerDocument)
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocument, {
+    explorer: true
+  })
 );
 
 db.connectToDatabase();
