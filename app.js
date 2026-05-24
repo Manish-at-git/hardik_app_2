@@ -23,6 +23,12 @@ app.get("/", (req, res) => {
   res.json({ message: "working" });
 });
 
+
+
+app.get("/swagger-test", (req, res) => {
+  res.json(swaggerDocument);
+});
+
 // const PORT = process.env.PORT || 3000;
 
 // app.listen(PORT, async () => {
@@ -38,6 +44,9 @@ app.use(
 );
 
 db.connectToDatabase();
+
+
+
 
 
 module.exports = app;
